@@ -23,5 +23,16 @@ namespace Proyecto1
         {
 
         }
+
+        private void LogIn_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void logInBtn_Click(object sender, EventArgs e)
+        {
+            logInInformation information = new logInInformation();
+            information.Visible = true;
+        }
     }
 }

@@ -33,33 +33,34 @@
             // 
             // logInBtn
             // 
-            logInBtn.BackColor = Color.IndianRed;
-            logInBtn.BackgroundColor = Color.IndianRed;
+            logInBtn.BackColor = Color.FromArgb(24, 33, 79);
+            logInBtn.BackgroundColor = Color.FromArgb(24, 33, 79);
             logInBtn.BorderColor = Color.LavenderBlush;
             logInBtn.BorderRadius = 15;
             logInBtn.BorderSize = 0;
             logInBtn.FlatAppearance.BorderSize = 0;
             logInBtn.FlatStyle = FlatStyle.Flat;
             logInBtn.ForeColor = Color.White;
-            logInBtn.Location = new Point(131, 379);
+            logInBtn.Location = new Point(155, 409);
             logInBtn.Name = "logInBtn";
             logInBtn.Size = new Size(150, 40);
             logInBtn.TabIndex = 0;
             logInBtn.Text = "Log In";
             logInBtn.TextColor = Color.White;
             logInBtn.UseVisualStyleBackColor = false;
+            logInBtn.Click += logInBtn_Click;
             // 
             // LogIn
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackgroundImage = Properties.Resources.gradient_lenses;
             ClientSize = new Size(443, 492);
             Controls.Add(logInBtn);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "LogIn";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "LogIn";
+            Text = "Log In";
+            Load += LogIn_Load;
             ResumeLayout(false);
         }
 
