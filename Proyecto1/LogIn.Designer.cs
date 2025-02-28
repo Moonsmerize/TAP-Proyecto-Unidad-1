@@ -41,6 +41,7 @@
             emailLbl1 = new Label();
             addressLbl1 = new Label();
             ageLbl1 = new Label();
+            colorsCB = new ComboBox();
             ((System.ComponentModel.ISupportInitialize)userPB).BeginInit();
             SuspendLayout();
             // 
@@ -54,7 +55,7 @@
             logInBtn.FlatAppearance.BorderSize = 0;
             logInBtn.FlatStyle = FlatStyle.Flat;
             logInBtn.ForeColor = Color.White;
-            logInBtn.Location = new Point(133, 369);
+            logInBtn.Location = new Point(142, 380);
             logInBtn.Name = "logInBtn";
             logInBtn.Size = new Size(150, 40);
             logInBtn.TabIndex = 0;
@@ -73,7 +74,7 @@
             logOutBtn.FlatAppearance.BorderSize = 0;
             logOutBtn.FlatStyle = FlatStyle.Flat;
             logOutBtn.ForeColor = Color.Maroon;
-            logOutBtn.Location = new Point(133, 369);
+            logOutBtn.Location = new Point(142, 380);
             logOutBtn.Name = "logOutBtn";
             logOutBtn.Size = new Size(150, 40);
             logOutBtn.TabIndex = 1;
@@ -193,11 +194,25 @@
             ageLbl1.Text = "Age:";
             ageLbl1.Visible = false;
             // 
+            // colorsCB
+            // 
+            colorsCB.DropDownStyle = ComboBoxStyle.DropDownList;
+            colorsCB.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            colorsCB.FormattingEnabled = true;
+            colorsCB.Items.AddRange(new object[] { "Red", "Green", "Pink", "Black" });
+            colorsCB.Location = new Point(296, 32);
+            colorsCB.Name = "colorsCB";
+            colorsCB.Size = new Size(73, 23);
+            colorsCB.TabIndex = 12;
+            colorsCB.Visible = false;
+            colorsCB.SelectedValueChanged += colorsCB_SelectedValueChanged;
+            // 
             // LogIn
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(398, 432);
+            ClientSize = new Size(398, 448);
+            Controls.Add(colorsCB);
             Controls.Add(ageLbl1);
             Controls.Add(addressLbl1);
             Controls.Add(emailLbl1);
@@ -233,5 +248,6 @@
         private Label emailLbl1;
         private Label addressLbl1;
         private Label ageLbl1;
+        private ComboBox colorsCB;
     }
 }

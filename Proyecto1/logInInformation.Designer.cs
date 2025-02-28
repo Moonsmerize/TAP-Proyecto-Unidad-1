@@ -66,7 +66,7 @@
             // 
             passwordTB.Location = new Point(35, 229);
             passwordTB.Name = "passwordTB";
-            passwordTB.PasswordChar = '♥';
+            passwordTB.PasswordChar = '*';
             passwordTB.Size = new Size(197, 23);
             passwordTB.TabIndex = 2;
             // 
@@ -191,13 +191,15 @@
             // 
             hidePassBtn.BackColor = Color.White;
             hidePassBtn.Image = (Image)resources.GetObject("hidePassBtn.Image");
-            hidePassBtn.Location = new Point(209, 231);
+            hidePassBtn.Location = new Point(209, 230);
             hidePassBtn.Name = "hidePassBtn";
             hidePassBtn.Size = new Size(22, 20);
             hidePassBtn.SizeMode = PictureBoxSizeMode.Zoom;
             hidePassBtn.TabIndex = 12;
             hidePassBtn.TabStop = false;
             hidePassBtn.Click += hidePassBtn_Click;
+            hidePassBtn.MouseEnter += hidePassBtn_MouseEnter;
+            hidePassBtn.MouseLeave += hidePassBtn_MouseLeave;
             // 
             // logInInformation
             // 

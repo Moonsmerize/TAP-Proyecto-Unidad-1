@@ -11,8 +11,8 @@ namespace Proyecto1
 
         public static void Initialize() {
 
-            UsersRepository.addUser(new User("Nestor Daniel Luna Avila","1234","Por ahi",new DateTime(1999,10,19),Privileges.Administrator,"1234"));
-            UsersRepository.addUser(new User("EHC","EHC@gmail.com","Por alla",new DateTime(2005,9,3),Privileges.User,"5678"));
+            UsersRepository.addUser(new User("Nestor Daniel Luna Avila","1234","Por aqui",new DateTime(1999,10,19),Privileges.Administrator,"1234"));
+            UsersRepository.addUser(new User("fasdfasdf","4321","Por alla",new DateTime(2005,9,3),Privileges.User,"4321"));
             foreach (User user in UsersRepository.users)
             {
                 // MessageBox.Show("Nombre: " + user.FullName);

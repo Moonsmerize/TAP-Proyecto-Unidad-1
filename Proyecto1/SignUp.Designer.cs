@@ -33,20 +33,24 @@
             label2 = new Label();
             passwordTB = new TextBox();
             label3 = new Label();
-            label4 = new Label();
-            label5 = new Label();
-            textBox5 = new TextBox();
             label6 = new Label();
             emailTB = new TextBox();
             label7 = new Label();
             addressTB = new TextBox();
-            label8 = new Label();
-            conPasswordTB = new TextBox();
             label9 = new Label();
             signUpBtn = new MiniStore.CustomBtn();
-            comboBox1 = new ComboBox();
-            textBox3 = new TextBox();
-            checkBox1 = new CheckBox();
+            administratorCL = new CheckBox();
+            calendarC = new MonthCalendar();
+            monthCB = new ComboBox();
+            yearCB = new ComboBox();
+            label5 = new Label();
+            label4 = new Label();
+            dayCB = new ComboBox();
+            nameMissingLbl = new Label();
+            emailMissingLbl = new Label();
+            passwordMissingLbl = new Label();
+            addressMissingLbl = new Label();
+            dateMissingLbl = new Label();
             SuspendLayout();
             // 
             // nameTB
@@ -84,36 +88,11 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(75, 422);
+            label3.Location = new Point(75, 354);
             label3.Name = "label3";
             label3.Size = new Size(46, 15);
             label3.TabIndex = 7;
             label3.Text = "Month:";
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Location = new Point(160, 422);
-            label4.Name = "label4";
-            label4.Size = new Size(30, 15);
-            label4.TabIndex = 8;
-            label4.Text = "Day:";
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Location = new Point(246, 422);
-            label5.Name = "label5";
-            label5.Size = new Size(32, 15);
-            label5.TabIndex = 9;
-            label5.Text = "Year:";
-            // 
-            // textBox5
-            // 
-            textBox5.Location = new Point(246, 440);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(52, 23);
-            textBox5.TabIndex = 11;
             // 
             // label6
             // 
@@ -134,7 +113,7 @@
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(76, 361);
+            label7.Location = new Point(76, 293);
             label7.Name = "label7";
             label7.Size = new Size(52, 15);
             label7.TabIndex = 15;
@@ -142,26 +121,10 @@
             // 
             // addressTB
             // 
-            addressTB.Location = new Point(76, 379);
+            addressTB.Location = new Point(76, 311);
             addressTB.Name = "addressTB";
             addressTB.Size = new Size(223, 23);
             addressTB.TabIndex = 14;
-            // 
-            // label8
-            // 
-            label8.AutoSize = true;
-            label8.Location = new Point(76, 296);
-            label8.Name = "label8";
-            label8.Size = new Size(107, 15);
-            label8.TabIndex = 17;
-            label8.Text = "Confirm Password:";
-            // 
-            // conPasswordTB
-            // 
-            conPasswordTB.Location = new Point(76, 314);
-            conPasswordTB.Name = "conPasswordTB";
-            conPasswordTB.Size = new Size(223, 23);
-            conPasswordTB.TabIndex = 16;
             // 
             // label9
             // 
@@ -183,7 +146,7 @@
             signUpBtn.FlatAppearance.BorderSize = 0;
             signUpBtn.FlatStyle = FlatStyle.Flat;
             signUpBtn.ForeColor = Color.White;
-            signUpBtn.Location = new Point(116, 526);
+            signUpBtn.Location = new Point(116, 458);
             signUpBtn.Name = "signUpBtn";
             signUpBtn.Size = new Size(150, 40);
             signUpBtn.TabIndex = 19;
@@ -192,53 +155,162 @@
             signUpBtn.UseVisualStyleBackColor = false;
             signUpBtn.Click += signUpBtn_Click;
             // 
-            // comboBox1
+            // administratorCL
             // 
-            comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12" });
-            comboBox1.Location = new Point(160, 440);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(52, 23);
-            comboBox1.TabIndex = 20;
+            administratorCL.AutoSize = true;
+            administratorCL.Location = new Point(76, 420);
+            administratorCL.Name = "administratorCL";
+            administratorCL.Size = new Size(99, 19);
+            administratorCL.TabIndex = 21;
+            administratorCL.Text = "Administrator";
+            administratorCL.UseVisualStyleBackColor = true;
             // 
-            // textBox3
+            // calendarC
             // 
-            textBox3.Location = new Point(76, 440);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(52, 23);
-            textBox3.TabIndex = 4;
+            calendarC.Location = new Point(75, 355);
+            calendarC.Name = "calendarC";
+            calendarC.ShowToday = false;
+            calendarC.TabIndex = 24;
+            calendarC.Visible = false;
+            calendarC.DateSelected += calendarC_DateSelected;
             // 
-            // checkBox1
+            // monthCB
             // 
-            checkBox1.AutoSize = true;
-            checkBox1.Location = new Point(76, 488);
-            checkBox1.Name = "checkBox1";
-            checkBox1.Size = new Size(99, 19);
-            checkBox1.TabIndex = 21;
-            checkBox1.Text = "Administrator";
-            checkBox1.UseVisualStyleBackColor = true;
+            monthCB.DropDownStyle = ComboBoxStyle.Simple;
+            monthCB.FormattingEnabled = true;
+            monthCB.Location = new Point(76, 372);
+            monthCB.Name = "monthCB";
+            monthCB.Size = new Size(52, 23);
+            monthCB.TabIndex = 23;
+            monthCB.MouseClick += monthCB_MouseClick;
+            // 
+            // yearCB
+            // 
+            yearCB.DropDownStyle = ComboBoxStyle.Simple;
+            yearCB.FormattingEnabled = true;
+            yearCB.Location = new Point(246, 372);
+            yearCB.Name = "yearCB";
+            yearCB.Size = new Size(52, 23);
+            yearCB.TabIndex = 22;
+            yearCB.MouseClick += yearCB_MouseClick;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new Point(246, 354);
+            label5.Name = "label5";
+            label5.Size = new Size(32, 15);
+            label5.TabIndex = 9;
+            label5.Text = "Year:";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(160, 354);
+            label4.Name = "label4";
+            label4.Size = new Size(30, 15);
+            label4.TabIndex = 8;
+            label4.Text = "Day:";
+            // 
+            // dayCB
+            // 
+            dayCB.DropDownStyle = ComboBoxStyle.Simple;
+            dayCB.FormattingEnabled = true;
+            dayCB.Location = new Point(160, 372);
+            dayCB.Name = "dayCB";
+            dayCB.Size = new Size(52, 23);
+            dayCB.TabIndex = 20;
+            dayCB.MouseClick += dayCB_MouseClick;
+            // 
+            // nameMissingLbl
+            // 
+            nameMissingLbl.AutoSize = true;
+            nameMissingLbl.BackColor = Color.Transparent;
+            nameMissingLbl.Font = new Font("Segoe UI", 7F);
+            nameMissingLbl.ForeColor = Color.Red;
+            nameMissingLbl.Location = new Point(75, 142);
+            nameMissingLbl.Name = "nameMissingLbl";
+            nameMissingLbl.Size = new Size(91, 12);
+            nameMissingLbl.TabIndex = 25;
+            nameMissingLbl.Text = "This field is required";
+            nameMissingLbl.Visible = false;
+            // 
+            // emailMissingLbl
+            // 
+            emailMissingLbl.AutoSize = true;
+            emailMissingLbl.BackColor = Color.Transparent;
+            emailMissingLbl.Font = new Font("Segoe UI", 7F);
+            emailMissingLbl.ForeColor = Color.Red;
+            emailMissingLbl.Location = new Point(75, 205);
+            emailMissingLbl.Name = "emailMissingLbl";
+            emailMissingLbl.Size = new Size(91, 12);
+            emailMissingLbl.TabIndex = 26;
+            emailMissingLbl.Text = "This field is required";
+            emailMissingLbl.Visible = false;
+            // 
+            // passwordMissingLbl
+            // 
+            passwordMissingLbl.AutoSize = true;
+            passwordMissingLbl.BackColor = Color.Transparent;
+            passwordMissingLbl.Font = new Font("Segoe UI", 7F);
+            passwordMissingLbl.ForeColor = Color.Red;
+            passwordMissingLbl.Location = new Point(75, 268);
+            passwordMissingLbl.Name = "passwordMissingLbl";
+            passwordMissingLbl.Size = new Size(91, 12);
+            passwordMissingLbl.TabIndex = 27;
+            passwordMissingLbl.Text = "This field is required";
+            passwordMissingLbl.Visible = false;
+            // 
+            // addressMissingLbl
+            // 
+            addressMissingLbl.AutoSize = true;
+            addressMissingLbl.BackColor = Color.Transparent;
+            addressMissingLbl.Font = new Font("Segoe UI", 7F);
+            addressMissingLbl.ForeColor = Color.Red;
+            addressMissingLbl.Location = new Point(76, 334);
+            addressMissingLbl.Name = "addressMissingLbl";
+            addressMissingLbl.Size = new Size(91, 12);
+            addressMissingLbl.TabIndex = 28;
+            addressMissingLbl.Text = "This field is required";
+            addressMissingLbl.Visible = false;
+            // 
+            // dateMissingLbl
+            // 
+            dateMissingLbl.AutoSize = true;
+            dateMissingLbl.BackColor = Color.Transparent;
+            dateMissingLbl.Font = new Font("Segoe UI", 7F);
+            dateMissingLbl.ForeColor = Color.Red;
+            dateMissingLbl.Location = new Point(145, 398);
+            dateMissingLbl.Name = "dateMissingLbl";
+            dateMissingLbl.Size = new Size(84, 12);
+            dateMissingLbl.TabIndex = 29;
+            dateMissingLbl.Text = "Must select a date";
+            dateMissingLbl.Visible = false;
             // 
             // SignUp
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(381, 580);
-            Controls.Add(checkBox1);
-            Controls.Add(comboBox1);
+            ClientSize = new Size(381, 519);
+            Controls.Add(dateMissingLbl);
+            Controls.Add(addressMissingLbl);
+            Controls.Add(passwordMissingLbl);
+            Controls.Add(emailMissingLbl);
+            Controls.Add(nameMissingLbl);
+            Controls.Add(calendarC);
+            Controls.Add(monthCB);
+            Controls.Add(yearCB);
+            Controls.Add(administratorCL);
+            Controls.Add(dayCB);
             Controls.Add(signUpBtn);
             Controls.Add(label9);
-            Controls.Add(label8);
-            Controls.Add(conPasswordTB);
             Controls.Add(label7);
             Controls.Add(addressTB);
             Controls.Add(label6);
             Controls.Add(emailTB);
-            Controls.Add(textBox5);
             Controls.Add(label5);
             Controls.Add(label4);
             Controls.Add(label3);
-            Controls.Add(textBox3);
             Controls.Add(label2);
             Controls.Add(passwordTB);
             Controls.Add(label1);
@@ -258,19 +330,23 @@
         private Label label2;
         private TextBox passwordTB;
         private Label label3;
-        private Label label4;
-        private Label label5;
-        private TextBox textBox5;
         private Label label6;
         private TextBox emailTB;
         private Label label7;
         private TextBox addressTB;
-        private Label label8;
-        private TextBox conPasswordTB;
         private Label label9;
         private MiniStore.CustomBtn signUpBtn;
-        private ComboBox comboBox1;
-        private TextBox textBox3;
-        private CheckBox checkBox1;
+        private CheckBox administratorCL;
+        private MonthCalendar calendarC;
+        private ComboBox monthCB;
+        private ComboBox yearCB;
+        private Label label5;
+        private Label label4;
+        private ComboBox dayCB;
+        private Label nameMissingLbl;
+        private Label emailMissingLbl;
+        private Label passwordMissingLbl;
+        private Label addressMissingLbl;
+        private Label dateMissingLbl;
     }
 }

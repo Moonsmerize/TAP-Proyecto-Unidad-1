@@ -39,7 +39,6 @@ namespace Proyecto1
                 {
                     if (emailTB.Text == user.Email && passwordTB.Text == user.Password)
                     {
-                        MessageBox.Show("sesion iniciada");
                         LogIn login = Application.OpenForms["LogIn"] as LogIn;
                         login.loadUserInfo(user);
                         this.Close();
@@ -80,12 +79,22 @@ namespace Proyecto1
             hidePass = !hidePass;
             if (hidePass == false)
             {
-                passwordTB.PasswordChar = '♥';
+                passwordTB.PasswordChar = '*';
             }
-            else 
+            else
             {
                 passwordTB.PasswordChar = '\0';
             }
+        }
+
+        private void hidePassBtn_MouseEnter(object sender, EventArgs e)
+        {
+            hidePassBtn.BackColor = Color.Gray;
+        }
+
+        private void hidePassBtn_MouseLeave(object sender, EventArgs e)
+        {
+            hidePassBtn.BackColor = Color.White;
         }
     }
 }
