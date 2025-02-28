@@ -42,6 +42,7 @@
             emailMissingLbl1 = new Label();
             incorrectLbl = new Label();
             hidePassBtn = new PictureBox();
+            unlockChB = new CheckBox();
             ((System.ComponentModel.ISupportInitialize)hidePassBtn).BeginInit();
             SuspendLayout();
             // 
@@ -201,11 +202,24 @@
             hidePassBtn.MouseEnter += hidePassBtn_MouseEnter;
             hidePassBtn.MouseLeave += hidePassBtn_MouseLeave;
             // 
+            // unlockChB
+            // 
+            unlockChB.AutoSize = true;
+            unlockChB.Location = new Point(272, 233);
+            unlockChB.Name = "unlockChB";
+            unlockChB.Size = new Size(62, 19);
+            unlockChB.TabIndex = 13;
+            unlockChB.Text = "unlock";
+            unlockChB.UseVisualStyleBackColor = true;
+            unlockChB.Visible = false;
+            unlockChB.CheckedChanged += unlockChB_CheckedChanged;
+            // 
             // logInInformation
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(576, 375);
+            Controls.Add(unlockChB);
             Controls.Add(hidePassBtn);
             Controls.Add(incorrectLbl);
             Controls.Add(emailMissingLbl1);
@@ -243,5 +257,6 @@
         private Label emailMissingLbl1;
         private Label incorrectLbl;
         private PictureBox hidePassBtn;
+        private CheckBox unlockChB;
     }
 }

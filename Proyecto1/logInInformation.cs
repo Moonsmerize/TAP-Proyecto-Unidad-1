@@ -10,9 +10,11 @@ using System.Windows.Forms;
 
 namespace Proyecto1
 {
+
     public partial class logInInformation : Form
     {
         bool hidePass = true;
+        int tries = 0;
         public logInInformation()
         {
             InitializeComponent();
@@ -20,7 +22,7 @@ namespace Proyecto1
 
         private void logInInformation_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         private void logInBtn_Click(object sender, EventArgs e)
@@ -34,20 +36,33 @@ namespace Proyecto1
             }
             else
             {
-
-                foreach (User user in UsersRepository.users)
+                if (tries <= 3)
                 {
-                    if (emailTB.Text == user.Email && passwordTB.Text == user.Password)
+                    foreach (User user in UsersRepository.users)
                     {
-                        LogIn login = Application.OpenForms["LogIn"] as LogIn;
-                        login.loadUserInfo(user);
-                        this.Close();
-                    }
-                    else
-                    {
-                        incorrectLbl.Visible = true;
+                        if (emailTB.Text == user.Email && passwordTB.Text == user.Password)
+                        {
+                            LogIn login = Application.OpenForms["LogIn"] as LogIn;
+                            login.loadUserInfo(user);
+                            this.Close();
+                        }
+                        else
+                        {
+                            incorrectLbl.Visible = true;
+                            tries++;
+                            passwordTB.Text = "";
+                        }
                     }
                 }
+                else
+                {
+                    MessageBox.Show("System Blocked");
+                    passwordTB.Text = "";
+                    passwordTB.Enabled = false;
+                    unlockChB.Checked = false;
+                    unlockChB.Visible = true;
+                }
+
 
             }
         }
@@ -95,6 +110,13 @@ namespace Proyecto1
         private void hidePassBtn_MouseLeave(object sender, EventArgs e)
         {
             hidePassBtn.BackColor = Color.White;
+        }
+
+        private void unlockChB_CheckedChanged(object sender, EventArgs e)
+        {
+            passwordTB.Enabled = true;
+            tries = 0;
+            unlockChB.Visible = false;
         }
     }
 }

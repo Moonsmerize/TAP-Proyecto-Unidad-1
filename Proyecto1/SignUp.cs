@@ -27,7 +27,7 @@ namespace Proyecto1
                 if (nameTB.Text == "" || emailTB.Text == "" || passwordTB.Text == "" ||
                     addressTB.Text == "" || dayCB.Text == "" || monthCB.Text == "" || yearCB.Text == "")
                 {
-                    emailMissingLbl.Text = "This field is invalid";
+                    emailMissingLbl.Text = "This field is required";
                     if (nameTB.Text == "") nameMissingLbl.Visible = true;
                     if (passwordTB.Text == "") passwordMissingLbl.Visible = true;
                     if (addressTB.Text == "") addressMissingLbl.Visible = true;
