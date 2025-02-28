@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(logInInformation));
             label1 = new Label();
             emailTB = new TextBox();
             passwordTB = new TextBox();
@@ -36,7 +37,12 @@
             logInBtn = new MiniStore.CustomBtn();
             panel1 = new Panel();
             signUpBtn = new MiniStore.CustomBtn();
-            label4 = new Label();
+            fgtYourPasswordBtn = new Label();
+            emailMissingLbl = new Label();
+            emailMissingLbl1 = new Label();
+            incorrectLbl = new Label();
+            hidePassBtn = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)hidePassBtn).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -60,6 +66,7 @@
             // 
             passwordTB.Location = new Point(35, 229);
             passwordTB.Name = "passwordTB";
+            passwordTB.PasswordChar = '♥';
             passwordTB.Size = new Size(197, 23);
             passwordTB.TabIndex = 2;
             // 
@@ -128,21 +135,80 @@
             signUpBtn.UseVisualStyleBackColor = false;
             signUpBtn.Click += signUpBtn_Click;
             // 
-            // label4
+            // fgtYourPasswordBtn
             // 
-            label4.AutoSize = true;
-            label4.Location = new Point(35, 255);
-            label4.Name = "label4";
-            label4.Size = new Size(117, 15);
-            label4.TabIndex = 8;
-            label4.Text = "Forgotten password?";
+            fgtYourPasswordBtn.AutoSize = true;
+            fgtYourPasswordBtn.ForeColor = Color.FromArgb(24, 33, 79);
+            fgtYourPasswordBtn.Location = new Point(126, 291);
+            fgtYourPasswordBtn.Name = "fgtYourPasswordBtn";
+            fgtYourPasswordBtn.Size = new Size(127, 15);
+            fgtYourPasswordBtn.TabIndex = 8;
+            fgtYourPasswordBtn.Text = "Forgot your password?";
+            fgtYourPasswordBtn.Click += fgtYourPasswordBtn_Click;
+            fgtYourPasswordBtn.MouseEnter += frgPasswordOn;
+            fgtYourPasswordBtn.MouseLeave += frgPasswordOff;
+            // 
+            // emailMissingLbl
+            // 
+            emailMissingLbl.AutoSize = true;
+            emailMissingLbl.BackColor = Color.Transparent;
+            emailMissingLbl.Font = new Font("Segoe UI", 7F);
+            emailMissingLbl.ForeColor = Color.Red;
+            emailMissingLbl.Location = new Point(36, 168);
+            emailMissingLbl.Name = "emailMissingLbl";
+            emailMissingLbl.Size = new Size(91, 12);
+            emailMissingLbl.TabIndex = 9;
+            emailMissingLbl.Text = "This field is required";
+            emailMissingLbl.Visible = false;
+            // 
+            // emailMissingLbl1
+            // 
+            emailMissingLbl1.AutoSize = true;
+            emailMissingLbl1.BackColor = Color.Transparent;
+            emailMissingLbl1.Font = new Font("Segoe UI", 7F);
+            emailMissingLbl1.ForeColor = Color.Red;
+            emailMissingLbl1.Location = new Point(36, 252);
+            emailMissingLbl1.Name = "emailMissingLbl1";
+            emailMissingLbl1.Size = new Size(91, 12);
+            emailMissingLbl1.TabIndex = 10;
+            emailMissingLbl1.Text = "This field is required";
+            emailMissingLbl1.Visible = false;
+            // 
+            // incorrectLbl
+            // 
+            incorrectLbl.AutoSize = true;
+            incorrectLbl.BackColor = Color.Transparent;
+            incorrectLbl.Font = new Font("Segoe UI", 10F);
+            incorrectLbl.ForeColor = Color.Red;
+            incorrectLbl.Location = new Point(35, 87);
+            incorrectLbl.Name = "incorrectLbl";
+            incorrectLbl.Size = new Size(177, 19);
+            incorrectLbl.TabIndex = 11;
+            incorrectLbl.Text = "Email or password incorrect";
+            incorrectLbl.Visible = false;
+            // 
+            // hidePassBtn
+            // 
+            hidePassBtn.BackColor = Color.White;
+            hidePassBtn.Image = (Image)resources.GetObject("hidePassBtn.Image");
+            hidePassBtn.Location = new Point(209, 231);
+            hidePassBtn.Name = "hidePassBtn";
+            hidePassBtn.Size = new Size(22, 20);
+            hidePassBtn.SizeMode = PictureBoxSizeMode.Zoom;
+            hidePassBtn.TabIndex = 12;
+            hidePassBtn.TabStop = false;
+            hidePassBtn.Click += hidePassBtn_Click;
             // 
             // logInInformation
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(576, 375);
-            Controls.Add(label4);
+            Controls.Add(hidePassBtn);
+            Controls.Add(incorrectLbl);
+            Controls.Add(emailMissingLbl1);
+            Controls.Add(emailMissingLbl);
+            Controls.Add(fgtYourPasswordBtn);
             Controls.Add(signUpBtn);
             Controls.Add(panel1);
             Controls.Add(logInBtn);
@@ -155,6 +221,7 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Log In";
             Load += logInInformation_Load;
+            ((System.ComponentModel.ISupportInitialize)hidePassBtn).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -169,6 +236,10 @@
         private MiniStore.CustomBtn logInBtn;
         private Panel panel1;
         private MiniStore.CustomBtn signUpBtn;
-        private Label label4;
+        private Label fgtYourPasswordBtn;
+        private Label emailMissingLbl;
+        private Label emailMissingLbl1;
+        private Label incorrectLbl;
+        private PictureBox hidePassBtn;
     }
 }

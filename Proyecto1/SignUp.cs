@@ -23,9 +23,17 @@ namespace Proyecto1
             {
                 MessageBox.Show("validio");
             }
-            else 
-            { 
+            else
+            {
                 MessageBox.Show("invalidio");
+            }
+        }
+
+        private void SignUp_Load(object sender, EventArgs e)
+        {
+            if (nameTB.Text == "" || emailTB.Text == "")
+            {
+
             }
         }
     }

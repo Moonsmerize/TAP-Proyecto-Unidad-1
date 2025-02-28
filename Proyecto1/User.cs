@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Proyecto1
 {
-    class User
+    internal class User
     {
 
         private string fullName;
@@ -23,7 +23,7 @@ namespace Proyecto1
             this.email = "";
             this.address = "";
             this.birthday = new DateTime(1,1,1);
-            this.privileges = Privileges.user;
+            this.privileges = Privileges.User;
             this.password = "";
         }
 

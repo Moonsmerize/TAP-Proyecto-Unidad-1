@@ -46,6 +46,7 @@
             signUpBtn = new MiniStore.CustomBtn();
             comboBox1 = new ComboBox();
             textBox3 = new TextBox();
+            checkBox1 = new CheckBox();
             SuspendLayout();
             // 
             // nameTB
@@ -83,7 +84,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(77, 422);
+            label3.Location = new Point(75, 422);
             label3.Name = "label3";
             label3.Size = new Size(46, 15);
             label3.TabIndex = 7;
@@ -92,7 +93,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(161, 422);
+            label4.Location = new Point(160, 422);
             label4.Name = "label4";
             label4.Size = new Size(30, 15);
             label4.TabIndex = 8;
@@ -101,7 +102,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(247, 422);
+            label5.Location = new Point(246, 422);
             label5.Name = "label5";
             label5.Size = new Size(32, 15);
             label5.TabIndex = 9;
@@ -109,7 +110,7 @@
             // 
             // textBox5
             // 
-            textBox5.Location = new Point(247, 449);
+            textBox5.Location = new Point(246, 440);
             textBox5.Name = "textBox5";
             textBox5.Size = new Size(52, 23);
             textBox5.TabIndex = 11;
@@ -182,7 +183,7 @@
             signUpBtn.FlatAppearance.BorderSize = 0;
             signUpBtn.FlatStyle = FlatStyle.Flat;
             signUpBtn.ForeColor = Color.White;
-            signUpBtn.Location = new Point(102, 510);
+            signUpBtn.Location = new Point(116, 526);
             signUpBtn.Name = "signUpBtn";
             signUpBtn.Size = new Size(150, 40);
             signUpBtn.TabIndex = 19;
@@ -196,23 +197,34 @@
             comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBox1.FormattingEnabled = true;
             comboBox1.Items.AddRange(new object[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12" });
-            comboBox1.Location = new Point(161, 449);
+            comboBox1.Location = new Point(160, 440);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(52, 23);
             comboBox1.TabIndex = 20;
             // 
             // textBox3
             // 
-            textBox3.Location = new Point(77, 449);
+            textBox3.Location = new Point(76, 440);
             textBox3.Name = "textBox3";
             textBox3.Size = new Size(52, 23);
             textBox3.TabIndex = 4;
+            // 
+            // checkBox1
+            // 
+            checkBox1.AutoSize = true;
+            checkBox1.Location = new Point(76, 488);
+            checkBox1.Name = "checkBox1";
+            checkBox1.Size = new Size(99, 19);
+            checkBox1.TabIndex = 21;
+            checkBox1.Text = "Administrator";
+            checkBox1.UseVisualStyleBackColor = true;
             // 
             // SignUp
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(396, 562);
+            ClientSize = new Size(381, 580);
+            Controls.Add(checkBox1);
             Controls.Add(comboBox1);
             Controls.Add(signUpBtn);
             Controls.Add(label9);
@@ -234,6 +246,7 @@
             Name = "SignUp";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Sign Up";
+            Load += SignUp_Load;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -258,5 +271,6 @@
         private MiniStore.CustomBtn signUpBtn;
         private ComboBox comboBox1;
         private TextBox textBox3;
+        private CheckBox checkBox1;
     }
 }

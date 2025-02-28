@@ -12,6 +12,7 @@ namespace Proyecto1
 {
     public partial class logInInformation : Form
     {
+        bool hidePass = true;
         public logInInformation()
         {
             InitializeComponent();
@@ -19,27 +20,36 @@ namespace Proyecto1
 
         private void logInInformation_Load(object sender, EventArgs e)
         {
-           
+
         }
 
         private void logInBtn_Click(object sender, EventArgs e)
         {
-            User logged = new User();
+            incorrectLbl.Visible = emailMissingLbl1.Visible = emailMissingLbl.Visible = false;
+
             if (emailTB.Text == "" || passwordTB.Text == "")
             {
-                MessageBox.Show("Favor de llenar todos los campos");
+                if (emailTB.Text == "") emailMissingLbl.Visible = true;
+                if (passwordTB.Text == "") emailMissingLbl1.Visible = true;
             }
             else
             {
+
                 foreach (User user in UsersRepository.users)
                 {
-                    if (emailTB.Text == user.Email && passwordTB.Text == user.Password) 
+                    if (emailTB.Text == user.Email && passwordTB.Text == user.Password)
                     {
                         MessageBox.Show("sesion iniciada");
-                        logged = user;
+                        LogIn login = Application.OpenForms["LogIn"] as LogIn;
+                        login.loadUserInfo(user);
+                        this.Close();
+                    }
+                    else
+                    {
+                        incorrectLbl.Visible = true;
                     }
                 }
-                
+
             }
         }
 
@@ -47,6 +57,35 @@ namespace Proyecto1
         {
             SignUp signUp = new SignUp();
             signUp.Visible = true;
+        }
+
+        private void fgtYourPasswordBtn_Click(object sender, EventArgs e)
+        {
+            RecoverPassword recover = new RecoverPassword();
+            recover.Visible = true;
+        }
+
+        private void frgPasswordOn(object sender, EventArgs e)
+        {
+            fgtYourPasswordBtn.Font = new Font(fgtYourPasswordBtn.Font, FontStyle.Bold);
+        }
+
+        private void frgPasswordOff(object sender, EventArgs e)
+        {
+            fgtYourPasswordBtn.Font = new Font(fgtYourPasswordBtn.Font, FontStyle.Regular);
+        }
+
+        private void hidePassBtn_Click(object sender, EventArgs e)
+        {
+            hidePass = !hidePass;
+            if (hidePass == false)
+            {
+                passwordTB.PasswordChar = '♥';
+            }
+            else 
+            {
+                passwordTB.PasswordChar = '\0';
+            }
         }
     }
 }

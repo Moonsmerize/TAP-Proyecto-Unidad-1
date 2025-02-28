@@ -8,7 +8,7 @@ namespace Proyecto1
 {
     enum Privileges
     {
-        user,
-        administrator
+        User,
+        Administrator
     }
 }
