@@ -50,7 +50,7 @@ namespace Proyecto1
                         {
                             incorrectLbl.Visible = true;
                             tries++;
-                            passwordTB.Text = "";
+                            
                         }
                     }
                 }

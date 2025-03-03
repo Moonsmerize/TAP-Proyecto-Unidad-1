@@ -167,7 +167,7 @@
             // 
             // calendarC
             // 
-            calendarC.Location = new Point(75, 355);
+            calendarC.Location = new Point(133, 217);
             calendarC.Name = "calendarC";
             calendarC.ShowToday = false;
             calendarC.TabIndex = 24;
